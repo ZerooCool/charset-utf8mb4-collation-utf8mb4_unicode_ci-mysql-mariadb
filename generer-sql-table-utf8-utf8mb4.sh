@@ -13,29 +13,25 @@
  }
  
  generate_sql() {
-   # disable FK checks while we are converting
+   # Désactiver FK contrôles pendant la conversion.
    echo "SET foreign_key_checks = 0;";
  
    tables | while read -r table; do
      echo "ALTER TABLE ${table} CONVERT TO CHARACTER SET ${CHARSET} COLLATE ${COLLATION};"
    done
  
+   # Réactiver FK contrôles suite à la conversion.
    echo "SET foreign_key_checks = 1;";
  }
  generate_sql
 
- Les 5 lignes suivantes doivent être retirées !
- # remove this
- Enter password:
+ # Les 5 lignes suivantes doivent être retirées !
  
- # remove this
- ALTER TABLE table CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+## remove this
+#Enter password:
+#
+## remove this
+#ALTER TABLE table CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
- Le code SQL obtenu peut être exécuté dans MariaDB pour modifier le Charset et la Collation des tables.
-
- Source : https://github.com/Juddling/mysql-charset
-
-
- 
- # Convertir les colonnes.
- #
+#Le code SQL obtenu peut être exécuté dans MariaDB pour modifier le Charset et la Collation des tables.
+# Source : https://github.com/Juddling/mysql-charset

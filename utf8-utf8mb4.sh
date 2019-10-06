@@ -50,3 +50,7 @@ mysqlcheck -u $user -p$pass $database --auto-repair --optimize
 
 echo ''
 echo 'Optimisation terminée !'
+
+
+# Faut t'il changer les options des colonnes ?
+# VARCHAR(191)

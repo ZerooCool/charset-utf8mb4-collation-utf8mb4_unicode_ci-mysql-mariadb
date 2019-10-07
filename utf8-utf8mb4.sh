@@ -20,6 +20,9 @@
 # innodb_file_per_table = 1
 # innodb_default_row_format = dynamic
 # innodb_large_prefix = 1
+#
+# Redémarrer le service MariaDB.
+# sudo service mysql restart
 
 ######################################
 # Identifiants de la base de données #
@@ -72,5 +75,5 @@ mysqlcheck -u $user -p$pass $database --auto-repair --optimize
 echo ''
 echo "Optimisation terminée !"
 
-# Appliquer le changement dans la configuration du programme !
-# app.ini
+# Appliquer le changement d'encodage dans la configuration du programme concerné.
+# Pour Gitea, modifier le fichier de configuration /etc/gitea/app.ini

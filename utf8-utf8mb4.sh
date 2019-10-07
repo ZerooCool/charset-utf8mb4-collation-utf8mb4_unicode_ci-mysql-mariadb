@@ -11,6 +11,8 @@
 #
 # [mysql]
 # default-character-set = utf8mb4
+# [mariadb]
+# default-character-set = utf8mb4
 #
 # [mysqld]
 # collation_connection s’affiche sous la forme utf8mb4_unicode_ci au lieu de utf8mb4_general_ci

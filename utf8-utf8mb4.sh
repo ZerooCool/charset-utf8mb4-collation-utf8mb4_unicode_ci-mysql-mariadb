@@ -64,13 +64,13 @@ echo ''
 #############################
 # Réparation / Optimisation #
 #############################
-echo 'Début de l'optimisation des tables !'
+echo "Début de l'optimisation des tables !"
 echo ''
 
 mysqlcheck -u $user -p$pass $database --auto-repair --optimize
 
 echo ''
-echo 'Optimisation terminée !'
+echo "Optimisation terminée !"
 
 # Appliquer le changement dans la configuration du programme !
 # app.ini

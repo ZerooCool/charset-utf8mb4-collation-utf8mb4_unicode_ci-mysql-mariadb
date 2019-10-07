@@ -69,5 +69,5 @@ mysqlcheck -u $user -p$pass $database --auto-repair --optimize
 echo ''
 echo 'Optimisation terminée !'
 
-# // Appliquer le changement dans la configuration du programme !
-# // app.ini
+# Appliquer le changement dans la configuration du programme !
+# app.ini

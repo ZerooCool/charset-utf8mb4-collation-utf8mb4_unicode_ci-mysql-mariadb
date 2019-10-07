@@ -1,8 +1,12 @@
 #!/bin/bash
 ######################################
 # Configurer la base de données MariaDB :
-# Ajouter les lignes suivantes dans la configuration de MariaDB ou de MySQL pour supporter les clés plus grandes nécessaires pour UTF8MB4.
-# La conversion de UTF8 vers UTF8MB4 pourra être effectuée sans avoir de retours erreurs ou avertissements pour la longueur de la clé.
+# Ajouter les lignes suivantes dans la configuration de MariaDB ou de MySQL
+# pour supporter des clés plus grandes nécessaires lors de l'utilisation de UTF8MB4.
+# La conversion de UTF8 vers UTF8MB4 pourra se faire sans retours erreurs
+# ou avertissements de longueur de clé dépassant la limite autorisée.
+#
+# Éditer la configuration de MariaDB.
 # sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
 #
 # [mysqld]

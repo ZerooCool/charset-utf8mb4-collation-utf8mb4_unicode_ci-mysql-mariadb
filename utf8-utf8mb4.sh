@@ -1,4 +1,22 @@
 #!/bin/bash
+######################################
+# Configurer la base de données MariaDB :
+# Ajouter les lignes suivantes dans la configuration de MariaDB ou de MySQL pour supporter les clés plus grandes nécessaires pour UTF8MB4.
+# La conversion de UTF8 vers UTF8MB4 pourra être effectuée sans avoir de retours erreurs ou avertissements pour la longueur de la clé.
+# sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
+#
+# Appliquer le changement :
+# character-set-server  = utf8mb4
+# collation-server      = utf8mb4_unicode_ci
+#
+# Ce groupe n'est lu que par les serveurs MariaDB-10.3.
+# Si vous utilisez le même fichier .cnf pour MariaDB de versions différentes,
+# utiliser ce groupe pour les options que les anciens serveurs ne comprennent pas.
+# [mariadb-10.3]
+# innodb_file_format = Barracuda
+# innodb_file_per_table = 1
+# innodb_default_row_format = dynamic
+# innodb_large_prefix = 1
 
 ######################################
 # Identifiants de la base de données #
@@ -50,3 +68,6 @@ mysqlcheck -u $user -p$pass $database --auto-repair --optimize
 
 echo ''
 echo 'Optimisation terminée !'
+
+# // Appliquer le changement dans la configuration du programme !
+# // app.ini

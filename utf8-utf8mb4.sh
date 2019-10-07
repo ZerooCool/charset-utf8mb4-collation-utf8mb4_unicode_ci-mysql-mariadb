@@ -5,7 +5,14 @@
 # La conversion de UTF8 vers UTF8MB4 pourra être effectuée sans avoir de retours erreurs ou avertissements pour la longueur de la clé.
 # sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
 #
-# Appliquer le changement :
+# Ajouter / Modifier :
+# [client]
+# default-character-set = utf8mb4
+#
+# [mysql]
+# default-character-set = utf8mb4
+#
+# [mysqld]
 # collation_connection s’affiche sous la forme utf8mb4_unicode_ci au lieu de utf8mb4_general_ci
 # lors de l’exécution d’une requête SHOW VARIABLES LIKE 'collation%'
 # character-set-client-handshake=FALSE

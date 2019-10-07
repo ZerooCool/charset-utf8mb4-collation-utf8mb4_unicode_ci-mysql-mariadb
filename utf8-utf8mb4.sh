@@ -6,6 +6,9 @@
 # sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
 #
 # Appliquer le changement :
+# collation_connection s’affiche sous la forme utf8mb4_unicode_ci au lieu de utf8mb4_general_ci
+# lors de l’exécution d’une requête SHOW VARIABLES LIKE 'collation%'
+# character-set-client-handshake=FALSE
 # character-set-server  = utf8mb4
 # collation-server      = utf8mb4_unicode_ci
 #

@@ -82,6 +82,6 @@ echo "Optimisation terminée !"
 # Appliquer le changement d'encodage dans la configuration du programme concerné.
 # Pour Gitea, modifier le fichier de configuration /etc/gitea/app.ini
 
-# Les caractères unicode peuvent être utilisés avec l'encodage de caractères UTF8MB4.
+# Les caractères unicode peuvent être enregistrés grâce à l'encodage de caractères UTF8MB4.
 # Unicode Character 'DASH SYMBOL' (U+1F4A8) : 💨
 # DASH : http://www.unicode-symbol.com/u/1F4A8.html

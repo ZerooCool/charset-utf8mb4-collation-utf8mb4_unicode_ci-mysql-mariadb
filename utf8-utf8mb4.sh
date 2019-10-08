@@ -60,7 +60,8 @@ do
 # Appliqué sur les colonnes #
 #############################
   echo "Convertir l'encodage / charset de la table : $table"
-  SET FOREIGN_KEY_CHECKS=0;
+  # SET FOREIGN_KEY_CHECKS=0;
+  # SET: not found
   mysql -u $user -p$pass $database -s -e "ALTER TABLE $table CONVERT TO CHARACTER SET $charset COLLATE $collate"
 done
 

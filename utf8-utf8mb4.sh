@@ -45,7 +45,7 @@ collate='utf8mb4_unicode_ci'
 # Appliqué sur la base de données #
 ###################################
 echo "Changement de l'encodage / charset de la base de données : $database"
-mysql -u $user -p$pass $database -s -e "ALTER DATABASE $database CHARACTER SET = $charset COLLATE = $collate;"
+mysql -u $user -p$pass $database -s -e "ALTER DATABASE `$database` CHARACTER SET = $charset COLLATE = $collate;"
 
 for table in $(mysql $database -s --skip-column-names -e 'show tables')
 do
@@ -54,14 +54,14 @@ do
 ###########################
   echo ''
   echo "Changement de l'encodage / charset de la table : $table"
-  mysql -u $user -p$pass $database -s -e "ALTER TABLE $table CHARACTER SET $charset COLLATE $collate"
+  mysql -u $user -p$pass $database -s -e "ALTER TABLE `$table` CHARACTER SET $charset COLLATE $collate"
 
 #############################
 # Appliqué sur les colonnes #
 #############################
   echo "Convertir l'encodage / charset de la table : $table"
   SET FOREIGN_KEY_CHECKS=0;
-  mysql -u $user -p$pass $database -s -e "ALTER TABLE $table CONVERT TO CHARACTER SET $charset COLLATE $collate"
+  mysql -u $user -p$pass $database -s -e "ALTER TABLE `$table` CONVERT TO CHARACTER SET $charset COLLATE $collate"
 done
 
 echo ''
